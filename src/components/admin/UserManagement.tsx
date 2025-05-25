@@ -3,9 +3,11 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { Search, UserPlus, Mail, Calendar, MoreVertical } from 'lucide-react';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { Search, Mail, Calendar, MoreVertical, Edit, Trash2, UserCheck } from 'lucide-react';
+import { InviteUserDialog } from './InviteUserDialog';
 
 interface User {
   id: string;
@@ -60,13 +62,10 @@ export const UserManagement = () => {
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h3 className="text-lg font-semibold text-gray-900">User Management</h3>
-          <p className="text-sm text-gray-600">Manage learners and administrators</p>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">User Management</h3>
+          <p className="text-sm text-gray-600 dark:text-gray-300">Manage learners and administrators</p>
         </div>
-        <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-          <UserPlus className="w-4 h-4 mr-2" />
-          Invite User
-        </Button>
+        <InviteUserDialog />
       </div>
 
       {/* Search */}
@@ -83,7 +82,7 @@ export const UserManagement = () => {
       {/* Users List */}
       <div className="space-y-4">
         {filteredUsers.map((user) => (
-          <Card key={user.id} className="border-0 shadow-md bg-white hover:shadow-lg transition-shadow">
+          <Card key={user.id} className="border-0 shadow-md bg-white dark:bg-gray-800 hover:shadow-lg transition-shadow">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-4">
@@ -93,8 +92,8 @@ export const UserManagement = () => {
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <h4 className="font-semibold text-gray-900">{user.name}</h4>
-                    <div className="flex items-center space-x-4 text-sm text-gray-600">
+                    <h4 className="font-semibold text-gray-900 dark:text-white">{user.name}</h4>
+                    <div className="flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-300">
                       <div className="flex items-center">
                         <Mail className="w-3 h-3 mr-1" />
                         {user.email}
@@ -117,13 +116,31 @@ export const UserManagement = () => {
                         {user.status}
                       </Badge>
                     </div>
-                    <p className="text-sm text-gray-600 mt-1">
+                    <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
                       {user.coursesEnrolled} courses enrolled
                     </p>
                   </div>
-                  <Button variant="ghost" size="sm">
-                    <MoreVertical className="w-4 h-4" />
-                  </Button>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="ghost" size="sm">
+                        <MoreVertical className="w-4 h-4" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                      <DropdownMenuItem>
+                        <Edit className="w-4 h-4 mr-2" />
+                        Edit User
+                      </DropdownMenuItem>
+                      <DropdownMenuItem>
+                        <UserCheck className="w-4 h-4 mr-2" />
+                        View Profile
+                      </DropdownMenuItem>
+                      <DropdownMenuItem className="text-destructive">
+                        <Trash2 className="w-4 h-4 mr-2" />
+                        Delete User
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 </div>
               </div>
             </CardContent>
