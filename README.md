@@ -1,73 +1,206 @@
-# Welcome to your Lovable project
+# 📚 Modular Learning Platform
 
-## Project info
+A scalable, full-stack learning management system built to deliver structured and interactive educational content. This platform enables **admin users** to create and manage courses, while **learners** can explore content, track progress, and complete engaging chapters.
 
-**URL**: https://lovable.dev/projects/3d0b370c-3e70-49f2-8994-116a38b64288
+Designed with a modular course structure (Courses → Sections → Units → Chapters), the application supports a variety of question types and stateful learning experiences. Built with **Next.js**, **Node.js**, **Express**, and **MongoDB**, it emphasizes security, performance, and developer scalability.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Features
 
-**Use Lovable**
+### 👨‍🏫 **Admin Panel**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3d0b370c-3e70-49f2-8994-116a38b64288) and start prompting.
+* JWT-based authentication and protected routes
+* Role-based access (admin vs. learner)
+* Admin dashboard to:
 
-Changes made via Lovable will be committed automatically to this repo.
+  * Create and manage courses
+  * Add nested content: Sections → Units → Chapters
+  * Design questions with types: MCQs, Fill-in-the-blanks, Text, and Audio-based (bonus)
+  * Upload media (images/audio) as part of question content
 
-**Use your preferred IDE**
+### 📘 **Learner Dashboard**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+* Register and login to access personalized dashboard
+* View enrolled courses and resume progress
+* Attempt chapter-level questions
+* Auto-save progress at section, unit, and chapter level
+* Score summary and chapter completion tracking
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 🧠 **Content Management**
 
-Follow these steps:
+* Deeply nested content structure using MongoDB population
+* Secure API endpoints with input validation and error handling
+* Question rendering engine with dynamic layouts per type
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🧰 Tech Stack
 
-# Step 3: Install the necessary dependencies.
-npm i
+| Layer      | Technology                                                        |
+| ---------- | ----------------------------------------------------------------- |
+| Frontend   | [Next.js](https://nextjs.org/), React, Tailwind CSS, Shadcn UI    |
+| Backend    | [Node.js](https://nodejs.org/), [Express](https://expressjs.com/) |
+| Database   | [MongoDB](https://www.mongodb.com/) with Mongoose ORM             |
+| Auth       | JWT (JSON Web Tokens)                                             |
+| State Mgmt | React Context or Redux (depending on implementation)              |
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+---
+
+## 📁 Folder Structure
+
+```
+lovable-dev-learning-platform/
+├── public/                      # Static assets
+├── src/                         # Source files (components, pages, etc.)
+├── backend/                     # Express API (optional if not integrated in Next.js)
+├── components.json              # UI component definitions
+├── vite.config.ts               # Vite config for frontend
+├── tailwind.config.ts           # Tailwind setup
+├── package.json                 # Project metadata and scripts
+├── tsconfig*.json               # TypeScript configuration files
+└── README.md                    # Project documentation
+```
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/learning-platform.git
+cd learning-platform
+```
+
+### 2. Install Dependencies
+
+```bash
+# Frontend
+bun install
+# or if you're using npm
+npm install
+
+# Backend (if in separate folder)
+cd backend
+npm install
+```
+
+### 3. Set Up Environment Variables
+
+Create a `.env` file in both frontend and backend directories:
+
+**Frontend `.env`**
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5000/api
+NEXT_PUBLIC_JWT_SECRET=your_jwt_secret
+```
+
+**Backend `.env`**
+
+```env
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/learning-platform
+JWT_SECRET=your_jwt_secret
+```
+
+### 4. Run the Project
+
+```bash
+# Backend
+cd backend
+npm run dev
+
+# Frontend
+cd ../
+bun dev
+# or
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 👥 User Roles
 
-**Use GitHub Codespaces**
+### 🔐 Admin
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+* Can create and edit course content
+* Full access to course structure
 
-## What technologies are used for this project?
+### 📗 Learner
 
-This project is built with:
+* Can browse, enroll, and attempt chapters
+* Can track progress and view scores
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🧪 Question Types Supported
 
-Simply open [Lovable](https://lovable.dev/projects/3d0b370c-3e70-49f2-8994-116a38b64288) and click on Share -> Publish.
+* **MCQ** – Multiple choice with one correct answer
+* **Fill in the Blank** – Text input based
+* **Text Answer** – Paragraph responses
+* **Audio Answer** – Optional feature to record or upload audio responses
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 📊 Goals and Focus
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+* **Modular Design**: Deeply nested course architecture (Course → Section → Unit → Chapter)
+* **Role-based Access Control**
+* **Conditional Rendering**: Display UI based on user type and question format
+* **Progress Tracking**: Auto-save and resume from last activity
+* **Security**: Input validation, token verification, and hashed passwords
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
+
+## 📱 (Bonus) Mobile App (Optional)
+
+* Built with Flutter (planned or optional)
+* Allows learners to:
+
+  * Login
+  * View course hierarchy
+  * Attempt chapters
+  * Track and sync progress
+
+---
+
+## ✅ To-Do & Future Enhancements
+
+* [ ] Add Flutter learner app
+* [ ] Add media upload support in chapters
+* [ ] Enable quiz review and re-attempt logic
+* [ ] Add pagination for long lists of content
+* [ ] Integrate caching and lazy loading
+
+---
+
+## 📝 Sample Credentials
+
+| Role    | Email                                         | Password |
+| ------- | --------------------------------------------- | -------- |
+| Admin   | [admin@example.com](mailto:admin@example.com) | admin123 |
+| Learner | [user@example.com](mailto:user@example.com)   | user123  |
+
+> *(These are placeholder credentials. Replace with your own seed data.)*
+
+---
+
+## 🌐 Deployment
+
+The project can be deployed to services like:
+
+* **Frontend**: Vercel, Netlify
+* **Backend**: Render, Railway, or Heroku
+* **Database**: MongoDB Atlas (cloud-hosted MongoDB)
+
+---
+
+## 📩 Contact
+
+Feel free to reach out for collaboration or questions:
+
+**Author**: Raj Anand Soni
+**Email**: \[[you@example.com](mailto:sonirajanand677@gmail.com)]
+**LinkedIn**: https://www.linkedin.com/in/raj-anand-soni-037541212 
