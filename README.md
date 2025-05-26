@@ -204,5 +204,5 @@ The project can be deployed to services like:
 Feel free to reach out for collaboration or questions:
 
 **Author**: Raj Anand Soni
-**Email**: \[[you@example.com](mailto:sonirajanand677@gmail.com)]
+**Email**: \[[sonirajanand677@gmail.com](mailto:sonirajanand677@gmail.com)]
 **LinkedIn**: https://www.linkedin.com/in/raj-anand-soni-037541212 
