@@ -1,4 +1,6 @@
-# 📚 Modular Learning Platform
+---
+## **IgniteLearn (Modular Learning Platform)**
+**IgniteLearn** is a modern, full-stack learning management system designed to deliver engaging, structured, and scalable educational experiences. Featuring a modular course hierarchy, role-based access for admins and learners, real-time progress tracking, interactive content, and insightful analytics, IgniteLearn empowers users to learn, grow, and excel. Built with Next.js, Node.js, Express, and MongoDB, it supports admin-controlled content creation and learner-focused dashboards, making it ideal for educational institutions and professional training platforms.
 
 A scalable, full-stack learning management system built to deliver structured and interactive educational content. This platform enables **admin users** to create and manage courses, while **learners** can explore content, track progress, and complete engaging chapters.
 
