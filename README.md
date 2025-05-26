@@ -1,4 +1,4 @@
-## **IgniteLearn (Modular Learning Platform)**📚
+## **IgniteLearn (Modular Learning Platform)** 📚
 
 **IgniteLearn** is a scalable, full-stack learning management system designed to deliver structured, interactive, and engaging educational content. The platform enables **admin users** to create and manage courses, while **learners** can explore learning paths, track progress, and complete interactive chapters.
 
