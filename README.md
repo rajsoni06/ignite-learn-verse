@@ -185,8 +185,6 @@ npm run dev
 | Admin   | [admin@example.com](mailto:admin@example.com) | admin123 |
 | Learner | [user@example.com](mailto:user@example.com)   | user123  |
 
-> *(These are placeholder credentials. Replace with your own seed data.)*
-
 ---
 
 ## 🌐 Deployment
