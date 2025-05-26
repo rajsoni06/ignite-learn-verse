@@ -1,10 +1,10 @@
----
 ## **IgniteLearn (Modular Learning Platform)**
-**IgniteLearn** is a modern, full-stack learning management system designed to deliver engaging, structured, and scalable educational experiences. Featuring a modular course hierarchy, role-based access for admins and learners, real-time progress tracking, interactive content, and insightful analytics, IgniteLearn empowers users to learn, grow, and excel. Built with Next.js, Node.js, Express, and MongoDB, it supports admin-controlled content creation and learner-focused dashboards, making it ideal for educational institutions and professional training platforms.
 
-A scalable, full-stack learning management system built to deliver structured and interactive educational content. This platform enables **admin users** to create and manage courses, while **learners** can explore content, track progress, and complete engaging chapters.
+**IgniteLearn** is a scalable, full-stack learning management system designed to deliver structured, interactive, and engaging educational content. The platform enables **admin users** to create and manage courses, while **learners** can explore learning paths, track progress, and complete interactive chapters.
 
-Designed with a modular course structure (Courses → Sections → Units → Chapters), the application supports a variety of question types and stateful learning experiences. Built with **Next.js**, **Node.js**, **Express**, and **MongoDB**, it emphasizes security, performance, and developer scalability.
+Built with **Next.js**, **Node.js**, **Express**, and **MongoDB**, IgniteLearn features a modular course hierarchy (Courses → Sections → Units → Chapters) and supports various question types, including MCQs, fill-in-the-blanks, text-based, and audio-based answers. The system is designed with robust **JWT-based authentication**, **role-based access control**, and **real-time progress tracking**, offering a secure and personalized learning experience.
+
+This platform is ideal for educational institutions, online academies, and professional training providers seeking to deliver impactful learning at scale. With its clean architecture and modern tech stack, IgniteLearn ensures performance, scalability, and a smooth user experience.
 
 ---
 
